@@ -9734,6 +9734,8 @@
       value: function _computeSingleLocation(loc, xy, wh, params) {
         var pos;
         var rotation = params.rotation;
+      if (!loc || loc.x === undefined || loc.y === undefined) return;
+
         var candidate = {
           curX: xy.x + loc.x * wh.w + loc.offx,
           curY: xy.y + loc.y * wh.h + loc.offy,
