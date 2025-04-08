@@ -10622,6 +10622,8 @@ var StraightConnector = function (_AbstractConnector) {
   }, {
     key: "_compute",
     value: function _compute(paintInfo, p) {
+      if(!paintInfo) return
+
       this._addSegment(StraightSegment, {
         x1: paintInfo.sx,
         y1: paintInfo.sy,
