@@ -774,6 +774,7 @@ function insertSorted(value, array, comparator, sortDescending) {
 
 function matchesSelector$1(el, selector, ctx) {
   ctx = ctx || el.parentNode;
+  if(!selector) return
   var possibles = ctx.querySelectorAll(selector);
   for (var i = 0; i < possibles.length; i++) {
     if (possibles[i] === el) {
@@ -1394,6 +1395,7 @@ function _touchAndList(target, pageX, pageY, screenX, screenY, clientX, clientY)
 }
 function matchesSelector(el, selector, ctx) {
   ctx = ctx || el.parentNode;
+  if(!selector) return
   var possibles = ctx.querySelectorAll(selector);
   for (var i = 0; i < possibles.length; i++) {
     if (possibles[i] === el) {
@@ -7791,7 +7793,7 @@ var AbstractConnector = function () {
       this.paintInfo = this._prepareCompute(params);
       this._clearSegments();
       this._compute(this.paintInfo, params);
-      
+
       if(!this.paintInfo) return
       this.x = this.paintInfo.points[0];
       this.y = this.paintInfo.points[1];
