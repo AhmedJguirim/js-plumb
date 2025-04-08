@@ -7669,6 +7669,7 @@ var AbstractConnector = function () {
   }, {
     key: "_prepareCompute",
     value: function _prepareCompute(params) {
+      if(!params.sourcePos) return
       this.strokeWidth = params.strokeWidth;
       var x1 = params.sourcePos.curX,
           x2 = params.targetPos.curX,
