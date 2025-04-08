@@ -14097,6 +14097,8 @@ var AbstractBezierConnector = function (_AbstractConnector) {
   }, {
     key: "_compute",
     value: function _compute(paintInfo, p) {
+      if(!paintInfo) return
+
       var sp = p.sourcePos,
           tp = p.targetPos,
           _w = Math.abs(sp.curX - tp.curX),
@@ -15205,6 +15207,8 @@ var FlowchartConnector = function (_AbstractConnector) {
   }, {
     key: "_compute",
     value: function _compute(paintInfo, params) {
+      if(!paintInfo) return
+
       var _this2 = this;
       this.internalSegments.length = 0;
       this.lastx = null;
