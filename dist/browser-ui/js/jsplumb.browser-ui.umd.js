@@ -7790,11 +7790,13 @@
     }, {
       key: "compute",
       value: function compute(params) {
-        if(!this.paintInfo) return
+
 
         this.paintInfo = this._prepareCompute(params);
         this._clearSegments();
         this._compute(this.paintInfo, params);
+        if(!this.paintInfo) return
+        
         this.x = this.paintInfo.points[0];
         this.y = this.paintInfo.points[1];
         this.w = this.paintInfo.points[2];
